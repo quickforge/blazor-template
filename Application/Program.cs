@@ -1,6 +1,8 @@
 using Application.Components;
 using Application.Services;
 
+using MudBlazor.Services;
+
 namespace Application;
 
 public class Program
@@ -11,6 +13,7 @@ public class Program
 
         // Application services
         builder.Services.AddScoped<IHello, Hello>();
+        builder.Services.AddMudServices();
     }
 
     public static void ConfigureApp(WebApplication app)

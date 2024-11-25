@@ -1,4 +1,4 @@
-namespace Application.Shared.Enums
+namespace Application.Shared.Enums;
 
 public enum Foo
 {

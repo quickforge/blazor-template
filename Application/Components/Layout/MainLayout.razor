@@ -16,7 +16,16 @@
     </MudDrawer>
     <MudMainContent>
         <main class="pa-4">
-            @Body
+            <ErrorBoundary>
+                <ChildContent>
+                    @Body
+                </ChildContent>
+                <ErrorContent>
+                    <MudAlert Severity="Severity.Error">
+                        Ocorreu um erro inesperado. Por favor, tente novamente
+                    </MudAlert>
+                </ErrorContent>
+            </ErrorBoundary>
         </main>
     </MudMainContent>
 </MudLayout>

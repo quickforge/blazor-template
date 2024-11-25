@@ -4,3 +4,12 @@
 <PageTitle>Home</PageTitle>
 
 <h1>@Hello.SayHello()</h1>
+
+<MudButton OnClick="HandleClick">Click me</MudButton>
+
+@code {
+    private void HandleClick()
+    {
+        throw new Exception("Ops");
+    }
+}

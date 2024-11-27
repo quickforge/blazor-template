@@ -12,7 +12,6 @@ public class Program
         builder.Services.AddRazorComponents().AddInteractiveServerComponents();
 
         // Application services
-        builder.Services.AddScoped<IHello, Hello>();
         builder.Services.AddMudServices();
     }
 

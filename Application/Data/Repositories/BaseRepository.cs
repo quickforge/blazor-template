@@ -1,8 +1,5 @@
 using System.Linq.Expressions;
 
-using Application.Shared.Enums;
-using Application.Shared.Exceptions;
-
 using Microsoft.EntityFrameworkCore;
 
 namespace Application.Data.Repositories;
@@ -73,7 +70,7 @@ public class BaseRepository<T>(DbContext context) : IRepository<T> where T : cla
 
         if (entity == null)
         {
-            throw new BaseException(ExceptionCode.NotFound, $"Entity with ID {id} not found");
+            throw new Exception($"Entity with ID {id} not found");
         }
 
         Delete(entity);

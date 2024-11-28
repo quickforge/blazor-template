@@ -4,11 +4,17 @@
 
 <h1>Hello</h1>
 
-<MudButton OnClick="HandleClick">Click me</MudButton>
+<MudButton OnClick="HandleGeneric">Generic exception</MudButton>
+<MudButton OnClick="HandleBase">Base exception</MudButton>
 
 @code {
-    private void HandleClick()
+    private void HandleGeneric()
     {
-        throw new Exception("Ops");
+        throw new Exception("Hello world");
+    }
+
+    private void HandleBase()
+    {
+        throw new BaseException(ExceptionCode.InvalidOperation, "Hello world");
     }
 }

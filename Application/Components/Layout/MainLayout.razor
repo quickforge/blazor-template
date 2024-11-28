@@ -22,7 +22,14 @@
                 </ChildContent>
                 <ErrorContent>
                     <MudAlert Severity="Severity.Error">
-                        Ocorreu um erro inesperado. Por favor, tente novamente
+                        @if (context.GetBaseException().GetType() == typeof(BaseException))
+                        {
+                            @context.GetBaseException().Message
+                        }
+                        else
+                        {
+                            <span>Ocorreu um erro inesperado. Por favor, tente novamente</span>
+                        }
                     </MudAlert>
                 </ErrorContent>
             </ErrorBoundary>
@@ -31,9 +38,9 @@
 </MudLayout>
 
 @code {
-    bool _drawerOpen = true;
+    private bool _drawerOpen = true;
 
-    void DrawerToggle()
+    private void DrawerToggle()
     {
         _drawerOpen = !_drawerOpen;
     }

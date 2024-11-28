@@ -1,0 +1,34 @@
+namespace Application.Services;
+
+public class {{ModelName}}Service({{ModelName}Repository repository})
+{
+    private readonly {{ModelName}Repository _repository = repository;
+
+    public async Task<List<{{ModelName}}>> GetAllAsync()
+    {
+        return await _repository.GetAsync();
+    }
+
+    public async Task<{{ModelName}}?> Get{{ModelName}}(object id)
+    {
+        return await _repository.GetByIdAsync(id);
+    }
+
+    public async Task Add{{ModelName}}({{ModelName}} entity)
+    {
+        _repository.Add(entity);
+        await _repository.SaveChangesAsync();
+    }
+
+    public async Task Update{{ModelName}}({{ModelName}} entity)
+    {
+        _repository.Update(entity);
+        await _repository.SaveChangesAsync();
+    }
+
+    public async Task Delete{{ModelName}}(object id)
+    {
+        _repository.Delete(entity);
+        await _repository.SaveChangesAsync();
+    }
+}
